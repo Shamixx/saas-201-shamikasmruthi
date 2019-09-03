@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <script type="text/javascript" src="script.js"> </script>
+    <title>College Registration </title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+   
+    <form class="registration-form">
+      <div class="form-group">
+        <label>Name </label>
+        <input type="text" id="name" required>
+      </div>
+      <div>
+        <label>Phone number </label>
+        <input type="number" id="phno" required>
+      </div>
+      <div>
+        <label>Email Address </label>
+        <input type="email" id="emailaddress" required>
+      </div>
+      <div>
+        <label>Primary Choice for Department </label>
+        <select id="department1" class="department">
+          <option name="EEE">EEE</option>
+          <option name="MECH">MECH</option>
+          <option name="CSE">CSE</option>
+          <option name="CIVIL">CIVIL</option>
+        </select>
+      </div>
+      <div>
+        <label>Secondary Choice for Department </label>
+        <select id="department2" class="department">
+          <option value="EEE" >EEE</option>
+          <option value="MECH">MECH</option>
+          <option value="CSE">CSE</option>
+          <option value="CIVIL">CIVIL</option>
+        </select>
+      </div>
+      <button id="btn" class="button" type="submit"> Submit </button>
+    </form>
+    <div id="results" class="results-section hide"></div>
+   
+  </body>
+</html>
