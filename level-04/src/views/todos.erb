@@ -1,0 +1,42 @@
+<!-- views/todos.erb -->
+<header>
+  <div id='header-left'>
+    <h1>Todo List</h1>
+    <h3>Add a Todo!</h3>
+  </div>
+  <div>
+    <form action="/todos" method="POST" class="form">
+      <input type="text" name="title"/>
+        <input type="text" name="date" placeholder="dd/mm/yy"/>
+      <input type="submit"/>
+    </form>
+  </div>
+</header>
+
+<section class='todos-container'>
+  <div class='gallery'>
+
+    <% @todos.each do |todo| %>
+    <% index=0 %>
+     <% todo.each do |k,v| %>
+      <div class='btn-container'>
+        <h3>
+       <% if k.to_s=='title'%>
+        <a href="/todos/<%= index+1 %>" class="todo-box"><%= v %></a>
+       <% elsif v.to_s.empty? %>
+        <a href="/todos/<%= index+1 %>" class="todo-box">NO DEADLINE</a>
+       <% else %>
+        <h4>Deadline <%= v %> </h4>
+       <% end %>
+
+        </h3>
+     <% end %>
+        <form method='POST' action='/todos/<%= index + 1 %>'>
+          <input type='hidden' name='_method' value='delete'>
+          <input type='submit' value='Delete'>
+        </form>
+      </div>
+    <% index= index+1 %>
+    <% end %>
+  </div>
+</section>
